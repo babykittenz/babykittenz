@@ -24,8 +24,6 @@ class About extends Me
             ScssCss::class,
             ResponsiveDesign::class,
             WordPress::class,
-            HTML::class,
-            
         ];
     }
 
