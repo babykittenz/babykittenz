@@ -1,30 +1,36 @@
-### 👋 Hey I'm Mike
+<?php
 
-I'm a web developer in Roanoke VA. I specelize in marketing web development. The newest digital art always interests me and I'm always looking to collaborate on projects
+namespace Mike Kidby;
 
-<h3>🔍 Where to find me</h3>
-<p><a href="https://millmountaindigital.com" target="_blank"><img alt="website" src="https://img.shields.io/badge/Blog-%23FF4088.svg?&style=for-the-badge&logo=hugo&logoColor=white" /></a> <a href="https://github.com/babykittenz" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a>
-</p>
+class About extends Me
+{
+    public function getCurrentWorkplace(): array
+    {
+        return [
+            'workplace' => [
+                'company' => 'millMountainDigital',
+                'position' => 'owner'         
+            ]
+        ];
+    }
 
-### 🎮 Let's play Pokémon together~
-<img src="https://toy.aoaoao.me/image" width="300"/> 
+    public function getDailyKnowledge(): array
+    {
+        return [
+            Php::class,
+            Javascript::class,
+            Laravel::class,           
+            ReactNative::class,
+            ScssCss::class,
+            ResponsiveDesign::class,
+            WordPress::class,
+            HTML::class,
+            
+        ];
+    }
 
-<img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/blank.png" width="30"/> <a href="https://toy.aoaoao.me/control?button=2&callback=https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/up.png" width="30"/></a>
-<br><a href="https://toy.aoaoao.me/control?button=1&callback=https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/left.png" width="30"/></a><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/blank.png" width="30"/><a href="https://toy.aoaoao.me/control?button=0&callback=https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/right.png" width="30"/></a><img src="https://raw.githubusercontent.com/babykittez/babykittenz/master/img/blank.png" width="30"/><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/blank.png" width="30"/><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/blank.png" width="30"/><a href="https://toy.aoaoao.me/control?button=5&callback=https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/B.png" width="30"/></a> <a href="https://toy.aoaoao.me/control?button=4&callback=https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/A.png" width="30"/></a>
-<br><a href="https://toy.aoaoao.me/control?button=3&callback=https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/blank.png" width="30"/><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/down.png" width="30"/></a>
-<br><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/blank.png" width="30"/><img src="https://raw.githubusercontent.combabykittenz/babykittenz/master/img/blank.png" width="30"/><a href="https://toy.aoaoao.me/control?button=6&callback=\https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/select.png" height="30"/></a> <a href="https://toy.aoaoao.me/control?button=7&callback=https://github.com/babykittenz"><img src="https://raw.githubusercontent.com/babykittenz/babykittenz/master/img/start.png" height="30" /></a>
-
------
-
-Click buttons above to issue new gamepad input, refresh this page to view newst game screen.
-
-<details><summary>About this game section</summary>
-  
-  The section is developed based on my previopus GameBoy emulator project [Gameboy.Live](https://github.com/babykittenz/gameboy.live), you can use this project to deploy your own "cloud gaming server".
-</details>
-
-<details><summary>Statistics of this game so far</summary>
-  <img src="https://playground.aoaoao.me/Api/GBStatistic" />
-</details>
-
------
+    public function getFutureGoal(): string
+    {
+        return 'To contribute to open source, marketing, and digital art projects.';
+    }
+}
