@@ -7,13 +7,17 @@ type Skills string
 
 // Define skill constants
 const (
-	Php            Skills = "Php"
-	Javascript     Skills = "Javascript"
-	Laravel        Skills = "Laravel"
-	ReactNative    Skills = "ReactNative"
-	ScssCss        Skills = "ScssCss"
+	Php              Skills = "Php"
+	Typecript        Skills = "Typescript"
+	Laravel          Skills = "Laravel"
+	ReactNative      Skills = "ReactNative"
+	React            Skills = "React"
+	NextJS      	 Skills = "NextJS"
+	ScssCss          Skills = "ScssCss"
 	ResponsiveDesign Skills = "ResponsiveDesign"
-	WordPress      Skills = "WordPress"
+	Microservice     Skills = "Microservices"
+	WordPress        Skills = "WordPress"
+	Go		 Skills = "Go"
 )
 
 // Workplace represents employment information
@@ -44,11 +48,14 @@ func (a *About) GetCurrentWorkplace() map[string]Workplace {
 func (a *About) GetDailyKnowledge() []Skills {
 	return []Skills{
 		Php,
-		Javascript,
+		Typescript,
 		Laravel,
 		ReactNative,
+		React,
+		NextJS,
 		ScssCss,
 		ResponsiveDesign,
+		Microservices,
 		WordPress,
 	}
 }
