@@ -1,83 +1,77 @@
-package main
+package developer
 
-import "fmt"
-
-// Skills type represents various technical skills
-type Skills string
+// Skill represents a technical skill
+type Skill string
 
 // Define skill constants
 const (
-	Php              Skills = "Php"
-	Typecript        Skills = "Typescript"
-	Laravel          Skills = "Laravel"
-	ReactNative      Skills = "ReactNative"
-	React            Skills = "React"
-	NextJS      	 Skills = "NextJS"
-	ScssCss          Skills = "ScssCss"
-	ResponsiveDesign Skills = "ResponsiveDesign"
-	Microservice     Skills = "Microservices"
-	WordPress        Skills = "WordPress"
-	Go		 Skills = "Go"
+	SkillPhp             Skill = "PHP"
+	SkillTypescript      Skill = "TypeScript"
+	SkillLaravel         Skill = "Laravel"
+	SkillReactNative     Skill = "React Native"
+	SkillReact           Skill = "React"
+	SkillNextjs          Skill = "Next.js"
+	SkillScssCss         Skill = "SCSS/CSS"
+	SkillResponsiveDesign Skill = "Responsive Design"
+	SkillWordPress       Skill = "WordPress"
+	SkillMicroservices   Skill = "Microservices"
 )
 
-// Workplace represents employment information
+// Workplace describes employment information
 type Workplace struct {
 	Company  string
 	Position string
 }
 
-// Me is a base struct that About extends
-type Me struct{}
-
-// About extends the Me struct to provide personal information
-type About struct {
-	Me
+// ProfileInfo defines the interface for developer profile information
+type ProfileInfo interface {
+	CurrentWorkplace() Workplace
+	DailySkills() []Skill
+	FutureGoal() string
 }
 
-// GetCurrentWorkplace returns information about current employment
-func (a *About) GetCurrentWorkplace() map[string]Workplace {
-	return map[string]Workplace{
-		"workplace": {
-			Company:  "millMountainDigital",
-			Position: "owner",
-		},
+// Developer implements the ProfileInfo interface
+type Developer struct {
+	name string
+}
+
+// NewDeveloper creates a new Developer instance
+func NewDeveloper(name string) *Developer {
+	return &Developer{
+		name: name,
 	}
 }
 
-// GetDailyKnowledge returns an array of technical skills
-func (a *About) GetDailyKnowledge() []Skills {
-	return []Skills{
-		Php,
-		Typescript,
-		Laravel,
-		ReactNative,
-		React,
-		NextJS,
-		ScssCss,
-		ResponsiveDesign,
-		Microservices,
-		WordPress,
+// CurrentWorkplace returns current employment information
+func (d *Developer) CurrentWorkplace() Workplace {
+	return Workplace{
+		Company:  "millMountainDigital",
+		Position: "owner",
 	}
 }
 
-// GetFutureGoal returns a string describing future aspirations
-func (a *About) GetFutureGoal() string {
+// DailySkills returns a slice of technical skills used daily
+func (d *Developer) DailySkills() []Skill {
+	return []Skill{
+		SkillPhp,
+		SkillTypescript,
+		SkillLaravel,
+		SkillReact,
+		SkillNextjs,
+		SkillReactNative,
+		SkillScssCss,
+		SkillResponsiveDesign,
+		SkillWordPress,
+		SkillMicroservices,
+	}
+}
+
+// FutureGoal returns aspirational information
+func (d *Developer) FutureGoal() string {
 	return "To contribute to open source, marketing, and digital art projects."
 }
 
-func main() {
-	about := &About{}
-	
-	fmt.Println("Current Workplace:")
-	for _, workplace := range about.GetCurrentWorkplace() {
-		fmt.Printf("Company: %s, Position: %s\n", workplace.Company, workplace.Position)
-	}
-	
-	fmt.Println("\nDaily Knowledge:")
-	for _, skill := range about.GetDailyKnowledge() {
-		fmt.Println("-", skill)
-	}
-	
-	fmt.Println("\nFuture Goal:")
-	fmt.Println(about.GetFutureGoal())
+// Name returns the developer's name
+func (d *Developer) Name() string {
+	return d.name
 }
